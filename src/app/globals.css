@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary:#126B63; --deep:#124744; --secondary:#177D72; --bright:#1FA593;
+  --mint:#B9EBD1; --softmint:#E4F5E9; --pale:#F1F8F0; --ivory:#F8F8F1;
+  --ink:#173E3C; --muted:#647F7B; --line:#DDE8DF;
+  --coral:#FF7969; --coralbg:#FFF3F0; --success:#38A779;
+  --shadow:0 10px 32px -14px rgba(18,71,68,.22);
+}
+html { scroll-behavior: smooth; }
+body { font-family: Manrope, Inter, system-ui, sans-serif; color: var(--ink); min-height:100vh;
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--softmint) 55%, var(--pale) 100%) fixed; }
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-white shadow-soft; }
+  .badge { @apply inline-flex items-center gap-1 rounded-full bg-softmint px-3 py-1 text-xs font-semibold text-primary; }
+  .field { @apply w-full min-h-[44px] rounded-xl border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-mint; }
+}
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

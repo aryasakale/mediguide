@@ -1,0 +1,16 @@
+import type { Hospital } from '@/types/healthcare';
+// SAMPLE DATA ONLY - fictional providers for UI demonstration. Replace with a real dataset / API.
+const base = { verified: false, address: 'Sample address (demo record)' };
+export const demoHospitals: Hospital[] = [
+  { ...base, id: 'demo-1', name: 'Demo Central Hospital', category: 'Hospital', specialties: ['General Medicine', 'Emergency Care', 'Orthopedics'], languages: ['English', 'Hindi'], distanceKm: 1.8, rating: 4.5, open24h: true, emergency: true, hours: 'Open 24 hours (sample)', services: ['Emergency room', 'Ambulance', 'Pharmacy', 'Radiology', 'ICU'], x: 46, y: 42 },
+  { ...base, id: 'demo-2', name: 'Sample Care Clinic', category: 'Clinic', specialties: ['General Medicine', 'Pediatrics'], languages: ['English', 'Marathi'], distanceKm: 0.9, rating: 4.3, open24h: false, emergency: false, hours: '08:00 - 20:00 (sample)', services: ['Consultation', 'Vaccination', 'Basic lab tests'], x: 28, y: 58 },
+  { ...base, id: 'demo-3', name: 'Example Heart Institute', category: 'Hospital', specialties: ['Cardiology', 'Emergency Care'], languages: ['English'], distanceKm: 3.6, rating: 4.7, open24h: true, emergency: true, hours: 'Open 24 hours (sample)', services: ['Cardiac ICU', 'ECG & Echo', 'Cath lab', 'Ambulance'], x: 68, y: 30 },
+  { ...base, id: 'demo-4', name: 'Placeholder Family Clinic', category: 'Clinic', specialties: ['General Medicine', 'Dermatology'], languages: ['English', 'Hindi', 'Spanish'], distanceKm: 2.4, rating: 4.1, open24h: false, emergency: false, hours: '09:00 - 18:00 (sample)', services: ['Consultation', 'Skin care', 'Minor procedures'], x: 62, y: 66 },
+  { ...base, id: 'demo-5', name: 'Sample 24h Pharmacy', category: 'Pharmacy', specialties: ['Pharmacy'], languages: ['English', 'Hindi'], distanceKm: 0.6, open24h: true, emergency: false, hours: 'Open 24 hours (sample)', services: ['Prescription fulfilment', 'Over-the-counter medicines'], x: 38, y: 28 },
+  { ...base, id: 'demo-6', name: 'Example Dental Studio', category: 'Clinic', specialties: ['Dental'], languages: ['English', 'French'], distanceKm: 4.2, rating: 4.4, open24h: false, emergency: false, hours: '10:00 - 19:00 (sample)', services: ['Check-ups', 'Emergency dental care', 'Cleaning'], x: 80, y: 52 },
+  { ...base, id: 'demo-7', name: 'Dr. Sample Physician', category: 'Doctor', specialties: ['General Medicine'], languages: ['English', 'Hindi'], distanceKm: 1.2, rating: 4.6, open24h: false, emergency: false, hours: 'By appointment (sample)', services: ['Consultation', 'Travel health advice'], x: 18, y: 36 },
+  { ...base, id: 'demo-8', name: 'Sample Eye & Women\u2019s Hospital', category: 'Hospital', specialties: ['Ophthalmology', 'Obstetrics', 'Pediatrics'], languages: ['English', 'Marathi'], distanceKm: 5.8, rating: 4.2, open24h: false, emergency: true, hours: '07:00 - 22:00 (sample)', services: ['Eye surgery', 'Maternity ward', 'Pediatric clinic'], x: 54, y: 82 },
+];
+export const getHospital = (id: string) => demoHospitals.find((h) => h.id === id);
+export const allSpecialties = Array.from(new Set(demoHospitals.flatMap((h) => h.specialties))).sort();
+export const allLanguages = Array.from(new Set(demoHospitals.flatMap((h) => h.languages))).sort();
